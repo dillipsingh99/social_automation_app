@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-vp-$i18fb+0&#joudf)s1&qkg1t==9&s_*kn!5+uid@qf0r-ev
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://dillipsingh.onrender.com']
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['dillipsingh.onrender.com']
 
 
 # Application definition
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'social_automation_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
